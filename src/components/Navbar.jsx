@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const [hasClicked, setHasClicked] = useState(false);
 
   const navLinks = [
     { title: "Home", href: "#home" },
@@ -13,8 +15,39 @@ const Navbar = () => {
     { title: "Contact", href: "#contact" },
   ];
 
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+
+    const onScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (hasClicked) {
+        setHidden(false);
+        setHasClicked(false);
+        lastScrollY = currentScroll;
+        return;
+      }
+
+      if (currentScroll > lastScrollY && currentScroll > 100) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY = currentScroll;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [hasClicked]);
+
+  const handleNavClick = () => {
+    setHidden(true);
+    setMobileMenu(false);
+    setHasClicked(true);
+  };
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+    <header className={`fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
        <div className="h-[88px] flex items-center justify-between">
           {/* Logo */}
@@ -44,6 +77,7 @@ const Navbar = () => {
               <a
                 key={item.title}
                 href={item.href}
+                onClick={handleNavClick}
                 className="rounded-full px-5 py-3 font-semibold text-gray-600 transition-all duration-300 hover:bg-violet-50 hover:text-violet-600 whitespace-nowrap"
               >
                 {item.title}
@@ -55,6 +89,7 @@ const Navbar = () => {
 
           <a
             href="#contact"
+            onClick={handleNavClick}
             className="hidden lg:block rounded-full bg-gradient-to-r from-orange-500 to-red-400 px-8 py-3 font-semibold text-white shadow-xl transition duration-300 hover:scale-105"
           >
             Contact Us
@@ -81,7 +116,10 @@ const Navbar = () => {
                 key={item.title}
                 href={item.href}
                 className="font-medium text-gray-700"
-                onClick={() => setMobileMenu(false)}
+                onClick={() => {
+                  handleNavClick();
+                  setMobileMenu(false);
+                }}
               >
                 {item.title}
               </a>
@@ -90,7 +128,10 @@ const Navbar = () => {
             <a
               href="#contact"
               className="rounded-full bg-orange-500 py-3 text-center text-white"
-              onClick={() => setMobileMenu(false)}
+              onClick={() => {
+                handleNavClick();
+                setMobileMenu(false);
+              }}
             >
               Contact Us
             </a>
