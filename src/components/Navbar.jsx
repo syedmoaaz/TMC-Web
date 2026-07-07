@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/logo.png"; 
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const navLinks = [
-    { title: "Home", href: "#" },
-    { title: "About Us", href: "#" },
-    { title: "Why TMC", href: "#" },
-    { title: "Our Courses", href: "#" },
+    { title: "Home", href: "#home" },
+    { title: "About Us", href: "#about" },
+    { title: "Why TMC", href: "#why" },
+    { title: "Contact", href: "#contact" },
   ];
 
   return (
@@ -41,11 +41,11 @@ const Navbar = () => {
          <nav className="hidden lg:flex items-center gap-12 ml-10">
             {navLinks.map((item, index) => (
               <a
-                key={index}
+                key={item.title}
                 href={item.href}
                 className={`font-semibold transition-all duration-300 ${
                   index === 0
-                    ? "bg-violet-600 text-white px-8 py-3 rounded-full shadow-lg"
+                    ? "rounded-full bg-violet-600 px-8 py-3 text-white shadow-lg"
                     : "text-gray-600 hover:text-violet-600"
                 }`}
               >
@@ -56,9 +56,12 @@ const Navbar = () => {
 
           {/* Contact */}
 
-          <button className="hidden lg:block bg-gradient-to-r from-orange-500 to-red-400 text-white font-semibold px-8 py-3 rounded-full shadow-xl hover:scale-105 duration-300">
+          <a
+            href="#contact"
+            className="hidden lg:block rounded-full bg-gradient-to-r from-orange-500 to-red-400 px-8 py-3 font-semibold text-white shadow-xl transition duration-300 hover:scale-105"
+          >
             Contact Us
-          </button>
+          </a>
 
           {/* Mobile */}
 
@@ -81,14 +84,19 @@ const Navbar = () => {
                 key={item.title}
                 href={item.href}
                 className="font-medium text-gray-700"
+                onClick={() => setMobileMenu(false)}
               >
                 {item.title}
               </a>
             ))}
 
-            <button className="bg-orange-500 text-white py-3 rounded-full">
+            <a
+              href="#contact"
+              className="rounded-full bg-orange-500 py-3 text-center text-white"
+              onClick={() => setMobileMenu(false)}
+            >
               Contact Us
-            </button>
+            </a>
           </div>
         </div>
       )}

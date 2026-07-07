@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <main className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8">
+    <section id="contact" className="bg-slate-50 px-4 py-16 sm:px-6 lg:px-8 scroll-mt-28">
       <div className="mx-auto max-w-4xl space-y-10">
         <div className="rounded-[32px] bg-white p-10 shadow-xl shadow-slate-200/40">
           <p className="text-sm uppercase tracking-[0.24em] text-emerald-600">Contact Us</p>
@@ -70,6 +70,6 @@ export default function Contact() {
           </aside>
         </div>
       </div>
-    </main>
+    </section>
   )
 }

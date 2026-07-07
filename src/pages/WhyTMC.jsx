@@ -1,6 +1,6 @@
 export default function WhyTMC() {
   return (
-    <main className="bg-white px-4 py-16 sm:px-6 lg:px-8">
+    <section id="why" className="bg-white px-4 py-16 sm:px-6 lg:px-8 scroll-mt-28">
       <div className="mx-auto max-w-6xl">
         <div className="rounded-[32px] bg-slate-50 p-10 shadow-lg shadow-slate-200/40">
           <p className="text-sm uppercase tracking-[0.24em] text-rose-500">Why TMC</p>
@@ -48,6 +48,6 @@ export default function WhyTMC() {
           </div>
         </section>
       </div>
-    </main>
+    </section>
   )
 }
