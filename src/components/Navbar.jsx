@@ -8,6 +8,7 @@ const Navbar = () => {
   const navLinks = [
     { title: "Home", href: "#home" },
     { title: "About Us", href: "#about" },
+    { title: "Our Courses", href: "#courses" },
     { title: "Why TMC", href: "#why" },
     { title: "Contact", href: "#contact" },
   ];

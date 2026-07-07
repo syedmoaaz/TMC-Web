@@ -70,3 +70,16 @@ textarea {
     transform: translateY(-10px);
   }
 }
+
+.headline-animate span {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: headlineFade 0.8s ease-out forwards;
+}
+
+@keyframes headlineFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
