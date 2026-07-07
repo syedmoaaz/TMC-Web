@@ -9,7 +9,7 @@ const Home = () => {
 
   return (
     <div className="w-full">
-      <section id="home" className="relative overflow-hidden bg-gradient-to-r from-[#FFF9EC] via-white to-[#EEF8FF] min-h-[calc(100vh-88px)] py-24 scroll-mt-28">
+      <section id="home" className="relative overflow-hidden bg-gradient-to-r from-[#FFF9EC] via-white to-[#EEF8FF] min-h-[calc(100vh-88px)] py-10 scroll-mt-28">
         <div className="absolute top-40 left-0 h-96 w-96 rounded-full bg-yellow-200/60 blur-[140px]" />
         <div className="absolute bottom-20 right-0 h-[500px] w-[500px] rounded-full bg-sky-200/60 blur-[180px]" />
 
