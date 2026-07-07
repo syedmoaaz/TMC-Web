@@ -39,16 +39,12 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
 
-         <nav className="hidden lg:flex items-center gap-12 ml-10">
-            {navLinks.map((item, index) => (
+         <nav className="hidden lg:flex items-center gap-8 ml-10 flex-nowrap">
+            {navLinks.map((item) => (
               <a
                 key={item.title}
                 href={item.href}
-                className={`font-semibold transition-all duration-300 ${
-                  index === 0
-                    ? "rounded-full bg-violet-600 px-8 py-3 text-white shadow-lg"
-                    : "text-gray-600 hover:text-violet-600"
-                }`}
+                className="rounded-full px-5 py-3 font-semibold text-gray-600 transition-all duration-300 hover:bg-violet-50 hover:text-violet-600 whitespace-nowrap"
               >
                 {item.title}
               </a>
