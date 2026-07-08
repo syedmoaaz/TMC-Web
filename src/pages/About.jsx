@@ -22,7 +22,7 @@ export default function About() {
                 About Us
               </span>
               <h1 className="about-heading mt-5 text-4xl font-bold leading-tight text-slate-950 sm:text-5xl">
-                🌿 About Us – Our Journey
+                 About Us – Our Journey
               </h1>
               <p className="mt-6 text-lg leading-8 text-slate-700">
                 Our Facebook page was founded in December 2021 with a heartfelt mission: to make Montessori and Early Childhood education accessible, affordable, and simple for everyone.
