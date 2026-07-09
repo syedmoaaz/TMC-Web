@@ -81,32 +81,71 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-white py-20">
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-violet-600">Why families choose us</p>
-              <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">
-                A calm, practical path into Montessori learning.
-              </h2>
-              <p className="mt-5 text-lg leading-8 text-slate-600">
-                Our programs are designed to make early childhood education feel approachable, warm, and genuinely useful for modern families and educators.
-              </p>
-            </div>
+      <section className="relative overflow-hidden py-24">
 
-            <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-8 shadow-sm">
-              <ul className="space-y-4">
-                {highlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm">
-                    <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-500" />
-                    <span className="text-slate-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div className="absolute inset-0 bg-gradient-to-r from-[#FFF8E8] via-white to-[#EEF8FF]"></div>
+
+  <div className="absolute -left-24 top-0 w-72 h-72 rounded-full bg-yellow-200/40 blur-3xl"></div>
+
+  <div className="absolute right-0 bottom-0 w-80 h-80 rounded-full bg-sky-200/40 blur-3xl"></div>
+
+  <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
+
+    <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
+
+      <div>
+
+        <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900">
+
+          A calm, practical path
+
+          <br />
+
+          into Montessori learning.
+
+        </h2>
+
+        <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
+
+          We believe learning should be inspiring, practical and
+          accessible. Every course is designed to help teachers,
+          parents and caregivers build confidence through real-world
+          Montessori knowledge.
+
+        </p>
+
+      </div>
+
+      <div className="rounded-[32px] bg-white border border-violet-100 shadow-xl p-8">
+
+        <ul className="space-y-5">
+
+          {highlights.map((item) => (
+
+            <li
+              key={item}
+              className="flex items-start gap-4 rounded-2xl bg-gradient-to-r from-violet-50 via-yellow-50 to-green-50 p-5"
+            >
+
+              <div className="mt-1 h-3 w-3 rounded-full bg-gradient-to-r from-violet-600 to-green-500"></div>
+
+              <span className="text-slate-700 font-medium">
+                {item}
+              </span>
+
+            </li>
+
+          ))}
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
     </div>
   );
 };

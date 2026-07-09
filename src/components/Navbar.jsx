@@ -101,21 +101,25 @@ const Navbar = () => {
             onClick={() => setMobileMenu(!mobileMenu)}
             className="lg:hidden"
           >
-            {mobileMenu ? <X size={28} /> : <Menu size={28} />}
+            {mobileMenu ? <X size={28} /> : <Menu size={30} strokeWidth={2.5} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
 
-      {mobileMenu && (
+    <div
+  className={`lg:hidden overflow-hidden transition-all duration-300 ${
+    mobileMenu ? "max-h-96 border-t" : "max-h-0"
+  }`}
+>
         <div className="lg:hidden bg-white border-t">
-          <div className="flex flex-col px-6 py-5 space-y-4">
+          <div className="bg-white/95 backdrop-blur-xl px-6 py-6">
             {navLinks.map((item) => (
               <a
                 key={item.title}
                 href={item.href}
-                className="font-medium text-gray-700"
+               className="block rounded-xl px-4 py-3 font-medium text-slate-700 hover:bg-violet-50 hover:text-violet-600 transition"
                 onClick={() => {
                   handleNavClick();
                   setMobileMenu(false);
@@ -127,7 +131,7 @@ const Navbar = () => {
 
             <a
               href="#contact"
-              className="rounded-full bg-orange-500 py-3 text-center text-white"
+              className="mt-4 block rounded-full bg-gradient-to-r from-orange-500 to-red-400 py-3 text-center font-semibold text-white shadow-lg"
               onClick={() => {
                 handleNavClick();
                 setMobileMenu(false);
@@ -137,7 +141,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
