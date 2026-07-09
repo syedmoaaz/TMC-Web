@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
+import Courses from './pages/Courses'
 import WhyTMC from './pages/WhyTMC'
 import Contact from './pages/Contact'
 
@@ -11,6 +12,7 @@ function App() {
       <main className="pt-[88px]">
         <Home />
         <About />
+        <Courses />
         <WhyTMC />
         <Contact />
       </main>
