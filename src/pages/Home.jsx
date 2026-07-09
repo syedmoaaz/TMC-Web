@@ -1,4 +1,6 @@
 import { ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const highlights = [
@@ -95,24 +97,33 @@ const Home = () => {
 
       <div>
 
-        <h2 className="mt-6 text-4xl font-bold leading-tight text-slate-900">
 
-          A calm, practical path
+<motion.h2
+  initial={{
+  opacity:0,
+  y:80,
+  rotateX:30
+}}
 
-          <br />
+whileInView={{
+  opacity:1,
+  y:0,
+  rotateX:0
+}}
 
-          into Montessori learning.
+transition={{
+  duration:0.9,
+  ease:"easeOut"
+}}
+  viewport={{ once: true }}
+  className="mt-6 text-4xl font-bold leading-tight text-slate-900"
+>
+  A calm, practical path
+  <br />
+  into Montessori learning.
+</motion.h2>
 
-        </h2>
-
-        <p className="mt-6 max-w-xl text-lg leading-8 text-slate-600">
-
-          We believe learning should be inspiring, practical and
-          accessible. Every course is designed to help teachers,
-          parents and caregivers build confidence through real-world
-          Montessori knowledge.
-
-        </p>
+    <TypeWriter />
 
       </div>
 
@@ -144,10 +155,53 @@ const Home = () => {
     </div>
 
   </div>
+  
 
 </section>
     </div>
+
+
+
+
   );
+ 
 };
 
+function TypeWriter() {
+  const text =
+    "We believe learning should be inspiring, practical and accessible. Every course is designed to help teachers, parents and caregivers build confidence through real-world Montessori knowledge.";
+
+  const [displayText, setDisplayText] = useState("");
+  const [started, setStarted] = useState(false);
+
+  useEffect(() => {
+    if (!started) return;
+
+    let i = 0;
+
+    const interval = setInterval(() => {
+      setDisplayText(text.substring(0, i));
+      i++;
+
+      if (i > text.length) {
+        clearInterval(interval);
+      }
+    }, 18);
+
+    return () => clearInterval(interval);
+  }, [started]);
+
+  return (
+    <motion.p
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      onViewportEnter={() => setStarted(true)}
+      className="mt-6 max-w-xl text-lg leading-8 text-slate-600"
+    >
+      {displayText}
+      {started && <span className="animate-pulse text-violet-600">|</span>}
+    </motion.p>
+  );
+}
 export default Home;
