@@ -48,7 +48,7 @@ const Navbar = () => {
   return (
     <header className={`fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-transform duration-300 ${hidden ? "-translate-y-full" : "translate-y-0"}`}>
       <div className="max-w-[1280px] mx-auto px-6 lg:px-8">
-       <div className="h-[88px] flex items-center justify-between">
+       <div className="h-[72px] flex items-center justify-between">
           {/* Logo */}
 
         <div className="flex items-center gap-3">
