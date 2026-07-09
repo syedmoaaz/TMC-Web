@@ -86,7 +86,153 @@ const Home = () => {
                 </a>
               </div>
             </div>
+
+
+
+{/* RIGHT */}
+
+<div className="relative hidden lg:flex justify-center">
+
+  {/* Glow */}
+
+  <div className="absolute inset-0 rounded-[40px] bg-gradient-to-r from-violet-300/20 via-yellow-200/20 to-green-300/20 blur-3xl"></div>
+
+  {/* Image Card */}
+
+  <div className="relative overflow-hidden rounded-[40px] bg-white shadow-2xl p-3">
+
+    <img
+      src={heroImage}
+      alt="Montessori"
+      className="w-[470px] rounded-[30px] object-cover"
+    />
+
+  </div>
+
+  {/* Badge 1 */}
+
+  <div className="float absolute -top-5 -left-6 rounded-2xl bg-white px-5 py-3 shadow-xl">
+
+    <div className="flex items-center gap-3">
+
+      <GraduationCap
+        className="text-violet-600"
+        size={24}
+      />
+
+      <div>
+
+        <h4 className="font-bold">
+          Certified
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Courses
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* Badge 2 */}
+
+  <div
+    className="float absolute top-10 -right-8 rounded-2xl bg-white px-5 py-3 shadow-xl"
+    style={{ animationDelay: ".6s" }}
+  >
+
+    <div className="flex items-center gap-3">
+
+      <Users
+        className="text-orange-500"
+        size={24}
+      />
+
+      <div>
+
+        <h4 className="font-bold">
+          2500+
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Teachers
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* Badge 3 */}
+
+  <div
+    className="float absolute bottom-8 -left-8 rounded-2xl bg-white px-5 py-3 shadow-xl"
+    style={{ animationDelay: "1.2s" }}
+  >
+
+    <div className="flex items-center gap-3">
+
+      <BookOpen
+        className="text-green-600"
+        size={24}
+      />
+
+      <div>
+
+        <h4 className="font-bold">
+          Practical
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Learning
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  {/* Badge 4 */}
+
+  <div
+    className="float absolute -bottom-6 right-10 rounded-2xl bg-white px-5 py-3 shadow-xl"
+    style={{ animationDelay: "1.8s" }}
+  >
+
+    <div className="flex items-center gap-3">
+
+      <Globe2
+        className="text-sky-500"
+        size={24}
+      />
+
+      <div>
+
+        <h4 className="font-bold">
+          Global
+        </h4>
+
+        <p className="text-xs text-gray-500">
+          Community
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
           </div>
+
+
+
+
         </div>
 
 
