@@ -111,9 +111,15 @@ whileInView={{
   rotateX:0
 }}
 
+whileHover={{
+  scale: 1.02,
+}}
+
 transition={{
-  duration:0.9,
-  ease:"easeOut"
+  duration: 1,
+  delay: 0.15,
+  type: "spring",
+  stiffness: 70,
 }}
   viewport={{ once: true }}
   className="mt-6 text-4xl font-bold leading-tight text-slate-900"
