@@ -1,13 +1,37 @@
-import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import heroImage from "../assets/heroimage.png";
+import {
+  ArrowRight,
+  GraduationCap,
+  BookOpen,
+  HeartHandshake,
+  Users,
+  Globe2,
+} from "lucide-react"
 
 const Home = () => {
+
   const highlights = [
-    "Hands-on Montessori training",
-    "Flexible learning for parents and teachers",
-    "Supportive guidance from experienced educators",
-  ];
+  {
+    icon: GraduationCap,
+    title: "Hands-on Montessori Training",
+    color: "bg-violet-100",
+    iconColor: "text-violet-600",
+  },
+  {
+    icon: BookOpen,
+    title: "Flexible Learning for Parents & Teachers",
+    color: "bg-orange-100",
+    iconColor: "text-orange-500",
+  },
+  {
+    icon: HeartHandshake,
+    title: "Supportive Guidance from Experienced Educators",
+    color: "bg-green-100",
+    iconColor: "text-green-600",
+  },
+];
 
   return (
     <div className="w-full">
@@ -42,7 +66,7 @@ const Home = () => {
               </h1>
 
               <p className="mt-8 max-w-xl text-base leading-7 text-slate-800 font-medium">
-                The Montessori Castle is a training academy for aspiring and practising educators. Learn the Montessori method the way it was meant to be — hands-on, joyful, and rooted in the child.
+                The Montessori Castle is a training academy for aspiring and practising educators. Learn the Montessori method the way it was meant to be hands-on, joyful, and rooted in the child.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-5">
@@ -62,25 +86,11 @@ const Home = () => {
                 </a>
               </div>
             </div>
-
-            <div className="relative flex justify-center">
-              <div className="absolute h-[420px] w-[420px] rounded-full bg-gradient-to-r from-pink-300 via-yellow-200 to-sky-300 blur-[120px] opacity-30" />
-              <div className="absolute right-6 top-5 rotate-6 rounded-full bg-green-500 px-5 py-2 text-sm font-semibold text-white shadow-lg">
-                Coming Soon 🚀
-              </div>
-
-              <div className="relative flex h-[420px] w-[420px] items-center justify-center rounded-[35px] border border-gray-100 bg-white shadow-2xl">
-                <div className="text-center">
-                  <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-violet-100 text-5xl">
-                    🎓
-                  </div>
-                  <h3 className="mt-6 text-2xl font-bold text-violet-600">Hero Image</h3>
-                  <p className="mt-2 text-gray-500">Will be added later</p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
+
+
+
       </section>
 
       <section className="relative overflow-hidden py-24">
@@ -137,22 +147,34 @@ transition={{
 
         <ul className="space-y-5">
 
-          {highlights.map((item) => (
+       {highlights.map((item, index) => {
+  const Icon = item.icon;
 
-            <li
-              key={item}
-              className="flex items-start gap-4 rounded-2xl bg-gradient-to-r from-violet-50 via-yellow-50 to-green-50 p-5"
-            >
+  return (
+    <motion.div
+      key={index}
+      whileHover={{
+        y: -6,
+        scale: 1.03,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 260,
+      }}
+      className="flex items-center gap-5 rounded-2xl bg-gradient-to-r from-violet-50 via-yellow-50 to-green-50 p-5 shadow-sm"
+    >
+      <div
+        className={`flex h-14 w-14 items-center justify-center rounded-2xl ${item.color}`}
+      >
+        <Icon size={28} className={item.iconColor} />
+      </div>
 
-              <div className="mt-1 h-3 w-3 rounded-full bg-gradient-to-r from-violet-600 to-green-500"></div>
-
-              <span className="text-slate-700 font-medium">
-                {item}
-              </span>
-
-            </li>
-
-          ))}
+      <span className="font-semibold leading-7 text-slate-700">
+        {item.title}
+      </span>
+    </motion.div>
+  );
+})}
 
         </ul>
 

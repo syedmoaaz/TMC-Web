@@ -46,17 +46,17 @@ export default function About() {
 
         <div className="text-center mb-20">
 
-          <div className="inline-flex items-center gap-2 bg-violet-100 text-violet-700 px-5 py-2 rounded-full font-medium">
-            <Sparkles size={18} />
-            About Us
-          </div>
 
           <h2 className="mt-6 text-4xl md:text-5xl font-bold leading-tight">
 
             The Heart Behind{" "}
 
+<span className="text-violet-600">
+              The 
+            </span>{" "}
+
             <span className="text-[#0B55B7]">
-              The Montessori
+               Montessori
             </span>{" "}
 
             <span className="text-[#52C24E]">
@@ -213,69 +213,7 @@ export default function About() {
 
         {/* CTA */}
 
-        <div className="mt-24">
-
-          <div className="relative overflow-hidden rounded-[40px] bg-gradient-to-r from-violet-600 via-[#0B55B7] to-[#52C24E] p-10 lg:p-14 shadow-2xl">
-
-            <div className="absolute -top-20 -right-16 w-64 h-64 rounded-full bg-white/10 blur-3xl"></div>
-
-            <div className="absolute -bottom-20 -left-16 w-72 h-72 rounded-full bg-white/10 blur-3xl"></div>
-
-            <div className="relative flex flex-col lg:flex-row items-center justify-between gap-10">
-
-              <div>
-
-                <span className="inline-flex items-center gap-2 bg-white/20 px-4 py-2 rounded-full text-white font-medium">
-
-                  <Sparkles size={18} />
-
-                  Join Our Learning Community
-
-                </span>
-
-                <h2 className="mt-6 text-4xl font-bold text-white leading-tight max-w-2xl">
-
-                  Empowering Teachers,
-
-                  <br />
-
-                  Inspiring Every Child.
-
-                </h2>
-
-                <p className="mt-6 text-white/90 leading-8 max-w-xl">
-
-                  Whether you are beginning your teaching journey or
-                  enhancing your professional skills, The Montessori
-                  Castle provides practical learning, expert guidance,
-                  and internationally recognized certification programs
-                  to help you grow with confidence.
-
-                </p>
-
-              </div>
-
-              <div className="flex flex-col gap-4">
-
-                <button className="bg-white text-violet-700 px-8 py-4 rounded-full font-semibold hover:scale-105 transition shadow-lg">
-
-                  Explore Courses
-
-                </button>
-
-                <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-violet-700 transition">
-
-                  Contact Us
-
-                </button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
+       
 
       </div>
 
