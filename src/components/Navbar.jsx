@@ -12,7 +12,6 @@ const Navbar = () => {
     { title: "About Us", href: "#about" },
     { title: "Our Courses", href: "#courses" },
     { title: "Why TMC", href: "#why" },
-    { title: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
