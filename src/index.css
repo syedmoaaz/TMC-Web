@@ -83,3 +83,22 @@ textarea {
     transform: translateY(0);
   }
 }
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: floating 4s ease-in-out infinite;
+  will-change: transform;
+}
