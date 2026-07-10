@@ -49,19 +49,19 @@ const features = [
 
 const WhyTMC = () => {
   return (
-    <section
-      id="why"
-      className="relative overflow-hidden bg-gradient-to-br from-[#FFF8EC] via-white to-[#EEF8FF] py-28 scroll-mt-20"
-    >
+  <section
+  id="why"
+  className="relative overflow-hidden bg-[#FFF8EF] py-16 scroll-mt-[85px]"
+>
       {/* Background */}
 
       <div className="absolute inset-0">
 
-        <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-violet-200/30 blur-[120px]"></div>
+        <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-orange-200/30 blur-[120px]" />
 
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-sky-200/30 blur-[140px]"></div>
+<div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-yellow-200/30 blur-[140px]" />
 
-        <div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-yellow-200/20 blur-[120px]"></div>
+<div className="absolute bottom-0 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-orange-100/30 blur-[120px]" />
 
       </div>
 
@@ -91,19 +91,19 @@ const WhyTMC = () => {
               className="text-5xl font-bold leading-tight"
             >
 
-              <span className="text-violet-600">
-                Why Choose
-              </span>
+         <span className="text-violet-600">
+Why Educators
+</span>
 
-              <br />
+<br/>
 
-              <span className="text-[#0B55B7]">
-                The Montessori
-              </span>{" "}
+<span className="text-[#0B55B7]">
+Choose
+</span>{" "}
 
-              <span className="text-[#52C24E]">
-                Castle?
-              </span>
+<span className="text-[#52C24E]">
+TMC
+</span>
 
             </motion.h2>
 
@@ -123,7 +123,7 @@ const WhyTMC = () => {
               viewport={{
                 once: true,
               }}
-              className="mt-8 text-lg leading-8 text-slate-600"
+              className="mt-8 max-w-xl text-lg leading-8 text-slate-600"
             >
               At The Montessori Castle, we believe every educator deserves
               practical, engaging and internationally inspired Montessori
@@ -163,15 +163,15 @@ const WhyTMC = () => {
                       x: 8,
                       scale: 1.02,
                     }}
-                    className="group flex gap-5 rounded-[28px] border border-white bg-white/80 p-6 shadow-xl backdrop-blur transition-all"
+                    className="group flex gap-5 rounded-[24px] border border-orange-100 bg-white p-5 shadow-lg transition-all"
                   >
 
                     <div
-                      className={`flex h-16 w-16 items-center justify-center rounded-2xl ${item.bg}`}
+                      className={`flex h-14 w-14 items-center justify-center rounded-2xl ${item.bg}`}
                     >
 
                       <Icon
-                        size={30}
+                        size={26}
                         className={`${item.iconColor} transition duration-300 group-hover:rotate-12 group-hover:scale-110`}
                       />
 
@@ -249,7 +249,7 @@ const WhyTMC = () => {
     whileHover={{
       scale: 1.02,
     }}
-    className="relative overflow-hidden rounded-[42px] border border-white/70 bg-white p-3 shadow-[0_35px_80px_rgba(0,0,0,.18)] backdrop-blur-xl"
+    className="relative overflow-hidden rounded-[30px] border border-orange-100 bg-white p-2 shadow-2xl"
   >
 
     <video
@@ -258,157 +258,13 @@ const WhyTMC = () => {
       muted
       loop
       playsInline
-      className="h-[620px] w-[340px] rounded-[32px] object-cover"
+     className="h-[500px] w-[280px] rounded-[24px] object-cover"
     />
 
   </motion.div>
 
-  {/* Floating Badge 1 */}
 
-  <motion.div
-    animate={{
-      y: [0, -12, 0],
-    }}
-    transition={{
-      duration: 3,
-      repeat: Infinity,
-    }}
-    className="absolute -left-10 top-8 rounded-2xl bg-white px-5 py-4 shadow-xl"
-  >
 
-    <div className="flex items-center gap-3">
-
-      <GraduationCap
-        className="text-violet-600"
-        size={26}
-      />
-
-      <div>
-
-        <h4 className="font-bold">
-          Certified
-        </h4>
-
-        <p className="text-xs text-slate-500">
-          Courses
-        </p>
-
-      </div>
-
-    </div>
-
-  </motion.div>
-
-  {/* Floating Badge 2 */}
-
-  <motion.div
-    animate={{
-      y: [0, -14, 0],
-    }}
-    transition={{
-      duration: 3.5,
-      repeat: Infinity,
-      delay: .5,
-    }}
-    className="absolute -right-12 top-24 rounded-2xl bg-white px-5 py-4 shadow-xl"
-  >
-
-    <div className="flex items-center gap-3">
-
-      <Globe2
-        className="text-sky-600"
-        size={26}
-      />
-
-      <div>
-
-        <h4 className="font-bold">
-          Online
-        </h4>
-
-        <p className="text-xs text-slate-500">
-          Learning
-        </p>
-
-      </div>
-
-    </div>
-
-  </motion.div>
-
-  {/* Floating Badge 3 */}
-
-  <motion.div
-    animate={{
-      y: [0, -10, 0],
-    }}
-    transition={{
-      duration: 3,
-      repeat: Infinity,
-      delay: 1,
-    }}
-    className="absolute -left-10 bottom-28 rounded-2xl bg-white px-5 py-4 shadow-xl"
-  >
-
-    <div className="flex items-center gap-3">
-
-      <Award
-        className="text-green-600"
-        size={26}
-      />
-
-      <div>
-
-        <h4 className="font-bold">
-          Professional
-        </h4>
-
-        <p className="text-xs text-slate-500">
-          Certificate
-        </p>
-
-      </div>
-
-    </div>
-
-  </motion.div>
-
-  {/* Floating Badge 4 */}
-
-  <motion.div
-    animate={{
-      y: [0, -12, 0],
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      delay: 1.3,
-    }}
-    className="absolute -right-8 bottom-12 rounded-2xl bg-white px-5 py-4 shadow-xl"
-  >
-
-    <div className="flex items-center gap-3">
-
-      <Users
-        className="text-orange-500"
-        size={26}
-      />
-
-      <div>
-
-        <h4 className="font-bold">
-          2500+
-        </h4>
-
-        <p className="text-xs text-slate-500">
-          Teachers
-        </p>
-
-      </div>
-
-    </div>
-
-  </motion.div>
 
 </div>
         </div>
@@ -435,7 +291,7 @@ const WhyTMC = () => {
         className="relative z-10 mx-auto mt-24 max-w-6xl px-6"
       >
 
-        <div className="overflow-hidden rounded-[40px] bg-gradient-to-r from-violet-600 via-blue-600 to-green-500 p-12 shadow-[0_30px_80px_rgba(59,130,246,.25)]">
+        <div className="overflow-hidden rounded-[40px] bg-gradient-to-r from-orange-500 via-orange-400 to-yellow-400 p-12 shadow-[0_30px_80px_rgba(59,130,246,.25)]">
 
           {/* Floating Glow */}
 
@@ -482,7 +338,7 @@ const WhyTMC = () => {
               whileTap={{
                 scale: .95,
               }}
-              className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-violet-700 shadow-xl transition"
+              className="mt-10 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 font-semibold text-orange-600 shadow-xl transition"
 
             >
 
