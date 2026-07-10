@@ -344,8 +344,13 @@ export default function Courses() {
 
         {/* Who Is It For */}
 
-        <div className="mt-24">
-          <h3 className="text-center text-4xl font-bold text-slate-900">
+        <div className="relative mt-24 overflow-hidden rounded-[40px] bg-gradient-to-br from-[#F7F3FF] via-[#FFFDF6] to-[#EEF9FF] px-8 py-16">
+            <div className="absolute -top-20 -left-20 h-72 w-72 rounded-full bg-violet-200/30 blur-3xl"></div>
+
+<div className="absolute -bottom-20 right-0 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl"></div>
+
+<div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-200/20 blur-3xl"></div>
+        <h3 className="relative z-10 text-center text-4xl font-bold text-slate-900">
             Who Is It For?
           </h3>
 
