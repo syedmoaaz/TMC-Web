@@ -4,6 +4,7 @@ import About from './pages/About'
 import Courses from './pages/Courses'
 import WhyTMC from './pages/WhyTMC'
 import Contact from './pages/Contact'
+import Workshops from './pages/Workshops'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Home />
         <About />
         <Courses />
+        <Workshops />
         <WhyTMC />
         <Contact />
       </main>

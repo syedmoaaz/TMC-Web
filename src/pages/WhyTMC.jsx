@@ -67,7 +67,7 @@ const WhyTMC = () => {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
 
-        <div className="grid items-center gap-20 lg:grid-cols-2">
+        <div className="grid items-start gap-20 lg:grid-cols-2">
 
           {/* LEFT SIDE */}
 
