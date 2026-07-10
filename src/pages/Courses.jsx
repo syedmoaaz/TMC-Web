@@ -1,65 +1,151 @@
+import { motion } from "framer-motion";
+import {
+  GraduationCap,
+  BookOpen,
+  Award,
+  Clock3,
+  ArrowRight,
+} from "lucide-react";
+
+const courses = [
+  {
+    icon: GraduationCap,
+    color: "text-violet-400",
+    badge: "Most Popular",
+    title: "Montessori Teacher Training",
+    duration: "8 Weeks",
+    description:
+      "Master Montessori philosophy, classroom preparation, practical life, sensorial activities, language and mathematics with hands-on learning.",
+  },
+  {
+    icon: BookOpen,
+    color: "text-sky-400",
+    badge: "Professional",
+    title: "Early Childhood Education",
+    duration: "6 Weeks",
+    description:
+      "Understand child psychology, classroom management, developmental milestones and effective teaching strategies for young learners.",
+  },
+  {
+    icon: Award,
+    color: "text-green-400",
+    badge: "Certification",
+    title: "Montessori Certification Program",
+    duration: "10 Weeks",
+    description:
+      "Complete internationally inspired Montessori training and earn a professional certificate to strengthen your teaching career.",
+  },
+];
+
 export default function Courses() {
   return (
-    <section id="courses" className="bg-slate-50 py-20 scroll-mt-28">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-600">Our Courses</p>
-          <h2 className="mt-4 text-3xl font-bold text-slate-900 sm:text-4xl">Designed for confident teaching and early childhood success.</h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600">
-            Choose the right learning path for your teaching goals — with practical Montessori training, child development support, and flexible online delivery.
+    <section
+      id="courses"
+      className="relative overflow-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-[#FFFDF8] pt-5 py-24 scroll-mt-10"
+    >
+      {/* Background Glow */}
+
+      <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-violet-300/20 blur-[120px]" />
+
+      <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-sky-300/20 blur-[120px]" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        {/* Heading */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .8 }}
+          className="text-center"
+        >
+          <h2 className="text-4xl font-bold text-slate-900 md:text-5xl">
+            Learn. Grow. Get Certified.
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            From Montessori foundations to advanced teacher training,
+            our courses are carefully designed to help educators gain
+            practical skills, internationally inspired certifications,
+            and the confidence to inspire young minds.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="inline-flex rounded-2xl bg-violet-100 px-3 py-1 text-sm font-semibold text-violet-700">Montessori Basics</div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-900">Montessori Fundamentals</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Build your foundation with child-led learning, practical materials, and classroom preparation.
-            </p>
-          </div>
+        {/* Cards */}
 
-          <div className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="inline-flex rounded-2xl bg-cyan-100 px-3 py-1 text-sm font-semibold text-cyan-700">Early Childhood</div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-900">Early Childhood Foundations</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Understand growth, language, social skills, and the prepared environment for young learners.
-            </p>
-          </div>
+        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          {courses.map((course, index) => {
+            const Icon = course.icon;
 
-          <div className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="inline-flex rounded-2xl bg-emerald-100 px-3 py-1 text-sm font-semibold text-emerald-700">Classroom</div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-900">Classroom Environment Design</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Learn how to create inspiring, respectful, and child-friendly learning spaces.
-            </p>
-          </div>
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: .7,
+                  delay: index * .15,
+                }}
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -10,
+                  scale: 1.02,
+                }}
+                className="group overflow-hidden rounded-[34px] bg-slate-900 p-8 text-white shadow-2xl transition"
+              >
+                {/* Badge */}
 
-          <div className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="inline-flex rounded-2xl bg-orange-100 px-3 py-1 text-sm font-semibold text-orange-700">Parenting</div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-900">Parenting with Montessori</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Discover practical guidance for creating calm routines, independence, and joyful learning at home.
-            </p>
-          </div>
+                <span className="rounded-full bg-violet-500/20 px-4 py-2 text-sm font-semibold text-violet-300">
+                  {course.badge}
+                </span>
 
-          <div className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="inline-flex rounded-2xl bg-rose-100 px-3 py-1 text-sm font-semibold text-rose-700">Support</div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-900">Mentor Coaching</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Get guidance from experienced educators to strengthen your skills and classroom confidence.
-            </p>
-          </div>
+                {/* Icon */}
 
-          <div className="group rounded-[28px] border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
-            <div className="inline-flex rounded-2xl bg-violet-100 px-3 py-1 text-sm font-semibold text-violet-700">Flexible</div>
-            <h3 className="mt-6 text-xl font-semibold text-slate-900">Flexible Online Delivery</h3>
-            <p className="mt-4 text-sm leading-7 text-slate-600">
-              Learn at your own pace with accessible resources, recordings, and downloadable tools.
-            </p>
-          </div>
+                <div className="mt-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur">
+                  <Icon
+                    className={course.color}
+                    size={42}
+                  />
+                </div>
+
+                {/* Title */}
+
+                <h3 className="mt-8 text-2xl font-bold leading-snug">
+                  {course.title}
+                </h3>
+
+                {/* Description */}
+
+                <p className="mt-5 leading-8 text-slate-300">
+                  {course.description}
+                </p>
+
+                {/* Duration */}
+
+                <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <Clock3 size={18} />
+
+                    <span>{course.duration}</span>
+                  </div>
+
+                  <div className="rounded-full bg-green-500/20 px-4 py-2 text-sm font-semibold text-green-300">
+                    Certificate
+                  </div>
+                </div>
+
+                {/* Button */}
+
+                <button className="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 py-4 font-semibold transition duration-300 group-hover:shadow-xl hover:scale-[1.02]">
+                  Learn More
+
+                  <ArrowRight size={20} />
+                </button>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
-  )
+  );
 }

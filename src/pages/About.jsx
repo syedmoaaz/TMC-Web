@@ -32,7 +32,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden py-24 bg-gradient-to-br from-[#FFF8E8] via-white to-[#EEF8FF]"
+      className="relative overflow-hidden py-24 bg-gradient-to-br from-[#FFF8E8] via-white to-[#EEF8FF] pt-6"
     >
       {/* Background Blobs */}
 
