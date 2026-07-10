@@ -62,10 +62,10 @@ const Home = () => {
           <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
             <div>
               <h1 className="text-4xl font-black leading-[1.05] md:text-5xl lg:text-[58px] headline-animate">
-                <span className="inline-block text-violet-600" style={{ animationDelay: '0.1s' }}>Where teachers</span>
+                <span className="inline-block text-violet-600" style={{ animationDelay: '0.1s' }}>Shaping the Mind</span>
                 <br />
-                <span className="inline-block text-orange-500" style={{ animationDelay: '0.25s' }}>begin their</span>{" "}
-                <span className="inline-block text-green-500" style={{ animationDelay: '0.4s' }}>magic.</span>
+                <span className="inline-block text-orange-500" style={{ animationDelay: '0.25s' }}>that Shape</span>{" "}
+                <span className="inline-block text-green-500" style={{ animationDelay: '0.4s' }}>the future</span>
               </h1>
 
               <p className="mt-8 max-w-xl text-base leading-7 text-slate-800 font-medium">
