@@ -238,11 +238,11 @@ export default function Courses() {
       <Laptop size={36} />
     </motion.div>
 
-    <h3 className="mt-6 text-4xl font-bold text-slate-900">
+    <h3 className="mt-6 text-4xl font-bold text-purple-700">
       Flexible Online Learning
     </h3>
 
-    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
+    <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-green-700 font-semibold">
       Learn from anywhere in the world through engaging lessons, expert
       guidance, downloadable resources, and a schedule designed around you.
     </p>
