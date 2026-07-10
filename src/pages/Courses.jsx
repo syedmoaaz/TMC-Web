@@ -203,32 +203,37 @@ export default function Courses() {
 
    {/* Flexible Online Learning */}
 
+{/* Flexible Online Learning */}
+
 <motion.div
-  initial={{ opacity: 0, y: 70 }}
+  initial={{ opacity: 0, y: 60 }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8 }}
   viewport={{ once: true }}
-  className="relative mt-24 overflow-hidden rounded-[40px] bg-gradient-to-br from-violet-50 via-white to-sky-50 p-10 shadow-2xl"
+  className="relative mt-24 overflow-hidden rounded-[42px] bg-gradient-to-br from-violet-50 via-white to-sky-50 p-10 lg:p-14 shadow-[0_25px_80px_rgba(91,33,182,0.08)]"
 >
-  {/* Background Glow */}
+  {/* Background Blobs */}
 
-  <div className="absolute -left-10 top-0 h-56 w-56 rounded-full bg-violet-200/30 blur-3xl"></div>
-  <div className="absolute -right-10 bottom-0 h-64 w-64 rounded-full bg-sky-200/30 blur-3xl"></div>
+  <div className="absolute -left-16 -top-16 h-72 w-72 rounded-full bg-violet-200/30 blur-3xl"></div>
+
+  <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-sky-200/30 blur-3xl"></div>
+
+  <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-200/20 blur-3xl"></div>
 
   {/* Heading */}
 
   <div className="relative z-10 text-center">
 
     <motion.div
-      whileHover={{
-        rotate: 8,
-        scale: 1.08,
+      animate={{
+        y: [0, -8, 0],
+        rotate: [0, 3, 0],
       }}
       transition={{
-        type: "spring",
-        stiffness: 250,
+        duration: 3,
+        repeat: Infinity,
       }}
-      className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-r from-violet-600 via-blue-500 to-green-500 text-white shadow-xl"
+      className="mx-auto flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-r from-violet-600 via-blue-500 to-green-500 text-white shadow-2xl"
     >
       <Laptop size={36} />
     </motion.div>
@@ -238,60 +243,59 @@ export default function Courses() {
     </h3>
 
     <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600">
-      Learn from anywhere in the world with interactive lessons, expert
-      trainers, downloadable resources, and a schedule that fits your
-      lifestyle.
+      Learn from anywhere in the world through engaging lessons, expert
+      guidance, downloadable resources, and a schedule designed around you.
     </p>
 
   </div>
 
-  {/* Feature Cards */}
+  {/* Cards */}
 
   <div className="relative z-10 mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
 
     {[
       {
         title: "Study at Your Own Pace",
+        desc: "Access lessons whenever it suits your schedule.",
         icon: Clock3,
         color: "bg-violet-100",
         iconColor: "text-violet-600",
       },
-
       {
         title: "Interactive Lessons",
+        desc: "Easy-to-follow sessions designed for real learning.",
         icon: BookOpen,
         color: "bg-orange-100",
         iconColor: "text-orange-500",
       },
-
       {
         title: "Downloadable Resources",
+        desc: "Worksheets, notes and practical learning materials.",
         icon: Download,
-        color: "bg-blue-100",
-        iconColor: "text-blue-600",
+        color: "bg-sky-100",
+        iconColor: "text-sky-600",
       },
-
       {
         title: "Expert Trainer Support",
+        desc: "Get guidance from experienced Montessori educators.",
         icon: Users,
         color: "bg-green-100",
         iconColor: "text-green-600",
       },
-
       {
-        title: "Professional Certification",
+        title: "Professional Certificate",
+        desc: "Receive a certificate after successful completion.",
         icon: GraduationCap,
         color: "bg-pink-100",
         iconColor: "text-pink-600",
       },
-
       {
-        title: "Learn Anytime, Anywhere",
+        title: "Learn Anywhere",
+        desc: "Join classes from home, work or while travelling.",
         icon: Laptop,
         color: "bg-yellow-100",
         iconColor: "text-yellow-600",
       },
-
     ].map((item, index) => {
 
       const Icon = item.icon;
@@ -301,18 +305,18 @@ export default function Courses() {
         <motion.div
           key={index}
           whileHover={{
-            y: -8,
+            y: -10,
             scale: 1.03,
           }}
           transition={{
             type: "spring",
-            stiffness: 250,
+            stiffness: 220,
           }}
-          className="rounded-[28px] border border-white bg-white/80 p-6 shadow-lg backdrop-blur"
+          className="group rounded-[28px] border border-white bg-white/90 p-6 backdrop-blur shadow-lg hover:shadow-2xl hover:border-violet-200 transition-all duration-300"
         >
 
           <div
-            className={`flex h-16 w-16 items-center justify-center rounded-2xl ${item.color}`}
+            className={`flex h-16 w-16 items-center justify-center rounded-2xl ${item.color} transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110`}
           >
             <Icon
               size={30}
@@ -320,9 +324,13 @@ export default function Courses() {
             />
           </div>
 
-          <h4 className="mt-5 text-lg font-semibold leading-7 text-slate-900">
+          <h4 className="mt-5 text-lg font-semibold text-slate-900">
             {item.title}
           </h4>
+
+          <p className="mt-2 text-sm leading-6 text-slate-500">
+            {item.desc}
+          </p>
 
         </motion.div>
 
@@ -331,6 +339,7 @@ export default function Courses() {
     })}
 
   </div>
+
 </motion.div>
 
         {/* Who Is It For */}
