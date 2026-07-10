@@ -47,7 +47,7 @@ export default function About() {
         <div className="text-center mb-20">
 
 
-          <h2 className="mt-6 text-4xl md:text-5xl font-bold leading-tight">
+          <h2 className="mt-6 text-4xl md:text-5xl font-bold leading-tight text-orange-500">
 
             The Heart Behind{" "}
 
@@ -65,7 +65,7 @@ export default function About() {
 
           </h2>
 
-          <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-gray-600">
+          <p className="max-w-3xl mx-auto mt-6 text-lg leading-8 text-slate-700 fade-up" style={{ animationDelay: '0.15s' }}>
             We are passionate about empowering aspiring and professional
             educators through high-quality Montessori teacher training,
             internationally recognized certification programs, and practical
@@ -82,19 +82,16 @@ export default function About() {
 
           <div>
 
-            <span className="text-sm font-semibold tracking-widest uppercase text-violet-600">
-              Our Story
-            </span>
 
             <h3 className="mt-4 text-3xl font-bold text-slate-900 leading-tight">
               Inspiring educators to create brighter childhoods.
             </h3>
 
             <p className="mt-6 text-gray-600 leading-8">
-              The Montessori Castle was founded with a simple yet meaningful
-              vision — making Montessori education more accessible,
-              practical, and affordable for teachers, parents, caregivers,
-              and anyone passionate about early childhood education.
+            The Montessori Castle is a training institute where we empower teachers,
+             parents, and caregivers with practical Montessori education, child development 
+             knowledge, and compassionate guidance. Through our courses, workshops,
+              and supportive community, we help adults create nurturing environments where every child can grow with confidence, independence, curiosity, and a lifelong love of learning.
             </p>
 
             <p className="mt-5 text-gray-600 leading-8">

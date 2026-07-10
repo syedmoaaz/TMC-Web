@@ -4,36 +4,64 @@ import {
   BookOpen,
   Award,
   Clock3,
+  BadgeDollarSign,
+  Laptop,
+  UserCheck,
+  Users,
+  Baby,
   ArrowRight,
 } from "lucide-react";
 
 const courses = [
   {
+    title: "Assistant Course",
+    duration: "1 Month",
+    price: "SAR 1,000",
+    badge: "Beginner",
+    color: "from-violet-500 to-purple-600",
+    bg: "from-violet-50 to-purple-50",
     icon: GraduationCap,
-    color: "text-violet-400",
+    points: [
+      "Introduction to Montessori",
+      "Child Development Basics",
+      "Learning Environment",
+      "Practical Activities",
+    ],
+  },
+
+  {
+    title: "Orientation Course",
+    subtitle: "Early Childhood Montessori",
+    duration: "1.5 Months",
+    price: "SAR 2,000",
     badge: "Most Popular",
-    title: "Montessori Teacher Training",
-    duration: "8 Weeks",
-    description:
-      "Master Montessori philosophy, classroom preparation, practical life, sensorial activities, language and mathematics with hands-on learning.",
-  },
-  {
+    color: "from-orange-500 to-amber-500",
+    bg: "from-orange-50 to-yellow-50",
+    featured: true,
     icon: BookOpen,
-    color: "text-sky-400",
-    badge: "Professional",
-    title: "Early Childhood Education",
-    duration: "6 Weeks",
-    description:
-      "Understand child psychology, classroom management, developmental milestones and effective teaching strategies for young learners.",
+    points: [
+      "Montessori Philosophy",
+      "Activity Planning",
+      "Child Observation",
+      "Prepared Classroom",
+    ],
   },
+
   {
+    title: "Teacher Comprehensive",
+    subtitle: "Montessori Certification",
+    duration: "3 Months",
+    price: "SAR 3,000",
+    badge: "Professional",
+    color: "from-green-500 to-emerald-600",
+    bg: "from-green-50 to-emerald-50",
     icon: Award,
-    color: "text-green-400",
-    badge: "Certification",
-    title: "Montessori Certification Program",
-    duration: "10 Weeks",
-    description:
-      "Complete internationally inspired Montessori training and earn a professional certificate to strengthen your teaching career.",
+    points: [
+      "Complete Montessori Training",
+      "Teaching Practice",
+      "Professional Assessment",
+      "Certification Included",
+    ],
   },
 ];
 
@@ -41,19 +69,16 @@ export default function Courses() {
   return (
     <section
       id="courses"
-      className="relative overflow-hidden bg-gradient-to-b from-[#F7FAFF] via-white to-[#FFFDF8] pt-5 py-24 scroll-mt-10"
+      className="relative overflow-hidden bg-gradient-to-b from-[#F8FBFF] via-white to-[#FFFDF7] py-24 scroll-mt-20"
     >
-      {/* Background Glow */}
-
-      <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-violet-300/20 blur-[120px]" />
-
-      <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-sky-300/20 blur-[120px]" />
+      <div className="absolute -left-20 top-10 h-80 w-80 rounded-full bg-violet-200/30 blur-[120px]" />
+      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-sky-200/30 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Heading */}
 
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 70 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: .8 }}
@@ -64,87 +89,209 @@ export default function Courses() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            From Montessori foundations to advanced teacher training,
-            our courses are carefully designed to help educators gain
-            practical skills, internationally inspired certifications,
-            and the confidence to inspire young minds.
+            Explore our professionally designed Montessori and Early Childhood
+            Education programs. Whether you're beginning your journey or
+            becoming a certified Montessori educator, we have the perfect course
+            for you.
           </p>
         </motion.div>
 
         {/* Cards */}
 
-        <div className="mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-20 grid gap-8 lg:grid-cols-3">
           {courses.map((course, index) => {
             const Icon = course.icon;
 
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 60 }}
+                initial={{ opacity: 0, y: 70 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{
-                  duration: .7,
                   delay: index * .15,
                 }}
-                viewport={{ once: true }}
                 whileHover={{
                   y: -10,
                   scale: 1.02,
                 }}
-                className="group overflow-hidden rounded-[34px] bg-slate-900 p-8 text-white shadow-2xl transition"
+                className={`relative overflow-hidden rounded-[34px] border border-slate-200 bg-gradient-to-br ${course.bg} p-8 shadow-xl`}
               >
-                {/* Badge */}
+                {course.featured && (
+                  <div className="absolute right-5 top-5 rounded-full bg-orange-500 px-4 py-2 text-xs font-semibold text-white shadow-lg">
+                    ⭐ Most Popular
+                  </div>
+                )}
 
-                <span className="rounded-full bg-violet-500/20 px-4 py-2 text-sm font-semibold text-violet-300">
-                  {course.badge}
-                </span>
-
-                {/* Icon */}
-
-                <div className="mt-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-white/10 backdrop-blur">
-                  <Icon
-                    className={course.color}
-                    size={42}
-                  />
+                <div
+                  className={`flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-r ${course.color} text-white shadow-lg`}
+                >
+                  <Icon size={38} />
                 </div>
 
-                {/* Title */}
-
-                <h3 className="mt-8 text-2xl font-bold leading-snug">
+                <h3 className="mt-8 text-2xl font-bold text-slate-900">
                   {course.title}
                 </h3>
 
-                {/* Description */}
+                {course.subtitle && (
+                  <p className="mt-1 text-slate-500">{course.subtitle}</p>
+                )}
 
-                <p className="mt-5 leading-8 text-slate-300">
-                  {course.description}
-                </p>
-
-                {/* Duration */}
-
-                <div className="mt-8 flex items-center justify-between border-t border-white/10 pt-6">
-                  <div className="flex items-center gap-2 text-slate-300">
+                <div className="mt-8 space-y-4">
+                  <div className="flex items-center gap-3 text-slate-700">
                     <Clock3 size={18} />
 
-                    <span>{course.duration}</span>
+                    {course.duration}
                   </div>
 
-                  <div className="rounded-full bg-green-500/20 px-4 py-2 text-sm font-semibold text-green-300">
-                    Certificate
+                  <div className="flex items-center gap-3 text-slate-700">
+                    <BadgeDollarSign size={18} />
+
+                    <span className="font-semibold text-2xl">
+                      {course.price}
+                    </span>
                   </div>
                 </div>
 
-                {/* Button */}
+                <ul className="mt-8 space-y-3">
+                  {course.points.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-center gap-3 text-slate-700"
+                    >
+                      <span className="h-2.5 w-2.5 rounded-full bg-green-500"></span>
 
-                <button className="mt-8 flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-600 py-4 font-semibold transition duration-300 group-hover:shadow-xl hover:scale-[1.02]">
-                  Learn More
+                      {point}
+                    </li>
+                  ))}
+                </ul>
 
-                  <ArrowRight size={20} />
+                <button
+                  className={`mt-10 flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r ${course.color} py-4 font-semibold text-white shadow-lg transition hover:scale-[1.02]`}
+                >
+                  Enroll Now
+
+                  <ArrowRight size={18} />
                 </button>
               </motion.div>
             );
           })}
         </div>
+
+        {/* Flexible Learning */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 70 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-24 rounded-[36px] bg-white p-10 shadow-xl"
+        >
+          <div className="flex items-center gap-4">
+            <div className="rounded-2xl bg-violet-100 p-4">
+              <Laptop className="text-violet-600" size={32} />
+            </div>
+
+            <div>
+              <h3 className="text-3xl font-bold text-slate-900">
+                Flexible Online Learning
+              </h3>
+
+              <p className="mt-2 text-slate-600">
+                Learn anytime, anywhere with expert guidance.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {[
+              "Short bite-sized lessons",
+              "Study at your own pace",
+              "Online resources",
+              "Trainer support",
+              "Professional guidance",
+              "Interactive learning",
+            ].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl bg-slate-50 p-5 font-medium text-slate-700"
+              >
+                ✅ {item}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Who Is It For */}
+
+        <div className="mt-24">
+          <h3 className="text-center text-4xl font-bold text-slate-900">
+            Who Is It For?
+          </h3>
+
+          <div className="mt-12 grid gap-8 md:grid-cols-3">
+            {[
+              {
+                icon: UserCheck,
+                title: "Teachers",
+                color: "bg-violet-100 text-violet-600",
+              },
+              {
+                icon: Baby,
+                title: "Parents & Caregivers",
+                color: "bg-orange-100 text-orange-500",
+              },
+              {
+                icon: Users,
+                title: "Aspiring Educators",
+                color: "bg-green-100 text-green-600",
+              },
+            ].map((item) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  whileHover={{
+                    y: -8,
+                  }}
+                  key={item.title}
+                  className="rounded-[30px] bg-white p-8 text-center shadow-lg"
+                >
+                  <div
+                    className={`mx-auto flex h-20 w-20 items-center justify-center rounded-full ${item.color}`}
+                  >
+                    <Icon size={36} />
+                  </div>
+
+                  <h4 className="mt-6 text-2xl font-bold text-slate-900">
+                    {item.title}
+                  </h4>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* CTA */}
+
+        <motion.div
+          initial={{ opacity: 0, scale: .95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mt-24 rounded-[40px] bg-gradient-to-r from-violet-600 via-indigo-600 to-orange-500 p-12 text-center text-white shadow-2xl"
+        >
+          <h2 className="text-4xl font-bold">
+            Ready to Start Your Montessori Journey?
+          </h2>
+
+          <p className="mx-auto mt-5 max-w-2xl text-lg text-white/90">
+            Limited seats available. Join teachers, parents and aspiring
+            educators learning with The Montessori Castle.
+          </p>
+
+          <button className="mt-8 rounded-full bg-white px-10 py-4 font-semibold text-violet-700 transition hover:scale-105">
+            Register Today
+          </button>
+        </motion.div>
       </div>
     </section>
   );
