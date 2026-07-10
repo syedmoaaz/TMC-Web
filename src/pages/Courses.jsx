@@ -354,6 +354,7 @@ export default function Courses() {
             Who Is It For?
           </h3>
 
+
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {[
               {
